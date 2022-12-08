@@ -19,8 +19,20 @@ const sum = allItems.map((items) => {
   return items.reduce((prev, curr) => +prev + +curr);
 });
 
+// First part
 const max = sum.reduce((prev, curr) => {
   return curr > prev ? curr : prev;
 });
 
 console.log(max);
+
+// Second Part
+function compareNumbers(a, b) {
+  return -(a - b);
+}
+
+const sumOfThree = sum
+  .sort(compareNumbers)
+  .slice(0, 3)
+  .reduce((x, y) => Number(x) + Number(y));
+console.log(sumOfThree);
